@@ -1,28 +1,13 @@
-## Micronaut 4.0.1 Documentation
+To test the fix for 
+https://github.com/micronaut-projects/micronaut-cache/issues/404
 
-- [User Guide](https://docs.micronaut.io/4.0.1/guide/index.html)
-- [API Reference](https://docs.micronaut.io/4.0.1/api/index.html)
-- [Configuration Reference](https://docs.micronaut.io/4.0.1/guide/configurationreference.html)
-- [Micronaut Guides](https://guides.micronaut.io/index.html)
----
+1. Clone [Core PR 8963](https://github.com/micronaut-projects/micronaut-core/pull/8963), which has the fix
+2. Merge in all the changes from the 4.0.x branch 
+3. Publish to maven local 
 
-- [Shadow Gradle Plugin](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)
-- [Micronaut Gradle Plugin documentation](https://micronaut-projects.github.io/micronaut-gradle-plugin/latest/)
-- [GraalVM Gradle Plugin documentation](https://graalvm.github.io/native-build-tools/latest/gradle-plugin.html)
-## Feature cache-caffeine documentation
+I already made these changes on this project
+1. Add `implementation("io.micronaut:micronaut-context:4.0.2-SNAPSHOT")` to the build dependencies
+2. Add `mavenLocal()` as first entry in build repositories
 
-- [Micronaut Caffeine Cache documentation](https://micronaut-projects.github.io/micronaut-cache/latest/guide/index.html)
-
-- [https://github.com/ben-manes/caffeine](https://github.com/ben-manes/caffeine)
-
-
-## Feature micronaut-aot documentation
-
-- [Micronaut AOT documentation](https://micronaut-projects.github.io/micronaut-aot/latest/guide/)
-
-
-## Feature serialization-jackson documentation
-
-- [Micronaut Serialization Jackson Core documentation](https://micronaut-projects.github.io/micronaut-serialization/latest/guide/)
-
+Run the `DefaultStringKeySerializerSpec` test. It should pass.
 

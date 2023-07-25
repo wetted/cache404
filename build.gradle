@@ -9,6 +9,7 @@ version = "0.1"
 group = "com.cache.fix"
 
 repositories {
+    mavenLocal()
     maven { url "https://s01.oss.sonatype.org/content/repositories/snapshots/"
         mavenContent { snapshotsOnly() }
     }
@@ -17,6 +18,7 @@ repositories {
 
 dependencies {
     annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
+    implementation("io.micronaut:micronaut-context:4.0.2-SNAPSHOT")
     implementation("io.micronaut.cache:micronaut-cache-caffeine")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
     runtimeOnly("ch.qos.logback:logback-classic")
